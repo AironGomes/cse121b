@@ -26,9 +26,10 @@ foodElement.innerHTML = arrayFoods;
 
 let favFoods = 'fruits';
 arrayFoods.push(favFoods);
-foodElement.innerHTML += `<br>${favFoods}`;
+foodElement.innerHTML += `<br>${arrayFoods}`;
 
 arrayFoods.shift()
 foodElement.innerHTML += `<br>${arrayFoods}`;
 
-
+arrayFoods.pop()
+foodElement.innerHTML += `<br>${arrayFoods}`;
