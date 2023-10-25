@@ -214,4 +214,8 @@ footer {
         display: block;
     }
 
+    #calendar {
+        padding: 40px;
+    }
+
 }
