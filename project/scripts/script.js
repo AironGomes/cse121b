@@ -8,17 +8,28 @@ let selectedMonth = 0;
 
 /* async displayTemples Function */
 const displayHolidays = (holidays) => {
-    holidays.forEach(holiday => {
-        let article = document.createElement('article');
-        let h3 = document.createElement('h3');
-        h3.textContent = holiday.name;
 
-        article.appendChild(h3);
-        holidaysElement.appendChild(article);
-    });
+    for(let i=1; i<=31; i++) {
+        let show = holidays.filter(holiday => holiday.date_day == i)
+        if (show.length > 0) {
+            let h3 = document.createElement('h3');
+            h3.textContent = `Day ${show[0].date_day} (${show[0].week_day}):`;
+            holidaysElement.appendChild(h3);
+            show.forEach(holiday => {
+                let h4 = document.createElement('h4');
+                let h5 = document.createElement('h5');
+                h4.textContent = `${holiday.name}`;
+                h5.textContent = `Location: ${holiday.location}`;
+                holidaysElement.appendChild(h4);
+                holidaysElement.appendChild(h5);
+            });
+        }
+    };
 }
 
-
+function checkDate(day, ) {
+    return age >= 18;
+  }
 
 /* async getMonth Function using fetch()*/
 const getMonth = async () => {
